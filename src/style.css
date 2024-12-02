@@ -1,3 +1,8 @@
+/************************************************************
+** 请将全局样式拷贝到项目的全局 CSS 文件或者当前页面的顶部 **
+** 否则页面将无法正常显示                                  **
+************************************************************/
+
 html {
   font-size: 16px;
 }
@@ -6,13 +11,11 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
     'Droid Sans', 'Helvetica Neue', 'Microsoft Yahei', sans-serif;
-    background-color: #a5adad;
 }
 
 body * {
   box-sizing: border-box;
   flex-shrink: 0;
-  color: #000;
 }
 
 #app {
