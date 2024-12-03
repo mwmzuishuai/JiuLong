@@ -6,27 +6,20 @@
             <span class="self-center text">系统</span>
             <div class="flex-col self-stretch mt-55">
                 <div class="flex-row items-center group">
-                    <img class="image_2"
-                        src="https://ide.code.fun/api/image?token=674d7b784ae84d00121e9aa1&name=9807e108aa174a68836febc401592c6a.png" />
-                    <span class="ml-16 font text_2 text_3">请输入账号</span>
+                    <el-input v-model="form.username" style="width: 240px" placeholder="请输入账号" />
                 </div>
                 <div class="flex-row items-center group view">
-                    <img class="image_2"
-                        src="https://ide.code.fun/api/image?token=674d7b784ae84d00121e9aa1&name=25a43af0bed1e7e6bb9cb00d24a95970.png" />
-                    <span class="ml-16 font text_2 text_4">请输入密码</span>
+                    <el-input v-model="form.password" style="width: 240px" placeholder="请输入密码" show-password />
+
                 </div>
                 <div class="flex-row group_2">
                     <div class="flex-row items-center flex-1 group_3">
-                        <img class="image_2"
-                            src="https://ide.code.fun/api/image?token=674d7b784ae84d00121e9aa1&name=8abf9e9ecdb6c1c656f027bdfb1817cd.png" />
-                        <span class="ml-16 font text_5">验证码</span>
+                        <el-input v-model="form.code" style="width: 240px" placeholder="验证码" />
+
                     </div>
                     <div class="shrink-0 group_4 ml-15"></div>
                 </div>
-                <div class="flex-row justify-center section_3">
-                    <span class="font_2">登</span>
-                    <span class="font_2 ml-9">录</span>
-                </div>
+                <el-button type="success" @click="userlogin">登录</el-button>
             </div>
         </div>
         <span class="text_6 pos_3"></span>
@@ -34,6 +27,19 @@
 </template>
 <script setup>
 import { ref } from 'vue'
+import { postLogin } from '@/api/user'
+const form = ref({
+    username: '',
+    password: '',
+    // 验证码
+    code: ''
+})
+const userlogin = () => {
+    console.log('登录')
+    postLogin(form.value).then(res => {
+        console.log(res)
+    })
+}
 </script>
 <style scoped lang='scss'>
 .mt-55 {
@@ -85,6 +91,7 @@ import { ref } from 'vue'
     background-size: 100% 100%;
     background-repeat: no-repeat;
     width: 25rem;
+    background-color: #ffffff;
 }
 
 .pos_2 {

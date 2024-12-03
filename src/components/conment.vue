@@ -10,18 +10,18 @@
                         <span class="font">运行状态：</span>
                         <span class="font">SOC：</span>
                         <span class="font">SOH：</span>
-                        <span class="font">运行状态：</span>
-                        <span class="font">运行状态：</span>
-                        <span class="font">运行状态：</span>
-                        <span class="font">运行状态：</span>
-                        <span class="font">运行状态：</span>
-                        <span class="font">运行状态：</span>
-                        <span class="font">运行状态：</span>
-                        <span class="font">运行状态：</span>
-                        <span class="font">运行状态：</span>
-                        <span class="font">运行状态：</span>
-                        <span class="font">运行状态：</span>
-                        <span class="font">运行状态：</span>
+                        <span class="font">设备电压：</span>
+                        <span class="font">设备电流：</span>
+                        <span class="font">有用功率：</span>
+                        <span class="font">无用功率：</span>
+                        <span class="font">最高电压：</span>
+                        <span class="font">最低电压：</span>
+                        <span class="font">平均电压：</span>
+                        <span class="font">最高温度：</span>
+                        <span class="font">最低温度：</span>
+                        <span class="font">平均温度：</span>
+                        <span class="font">累计充电：</span>
+                        <span class="font">累计放电：</span>
                     </div>
                 </div>
             </div>
@@ -32,6 +32,9 @@
 </template>
 <script setup>
 import { ref } from 'vue'
+const storeList = ref([{
+
+}])
 </script>
 <style scoped lang='scss'>
 .msweep {
@@ -56,6 +59,7 @@ import { ref } from 'vue'
     border: 1px dashed rgb(112, 112, 112);
     border-radius: 16px;
     width: 150px;
+    padding: 10px;
 
     background: rgb(255, 255, 255);
 

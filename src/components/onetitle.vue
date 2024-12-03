@@ -2,7 +2,7 @@
 	<div class="box">
 		<svg width="2560.000000" height="1440.000000" viewBox="0 0 2560 1440" fill="none"
 			xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-			style="height: 100%;width: 100%;">
+			style="height: 1000px;width: 100%;">
 			<desc>
 				Created with Pixso.
 			</desc>
@@ -497,43 +497,43 @@
 						stroke="#707070" stroke-opacity="0" stroke-width="1.000000" />
 				</g>
 				<g style="mix-blend-mode:normal">
-					<rect id="矩形 5" x="1018.500000" y="130.199219" width="12.000000" height="32.000000" fill="#FF0000"
-						fill-opacity="1.000000" />
+					<rect id="矩形 5" x="1018.500000" y="130.199219" width="12.000000" height="32.000000"
+						:fill="key1 ? '#00E62C' : ' #FF0000'" fill-opacity="1.000000" />
 					<rect id="矩形 5" x="1019.000000" y="130.699219" width="11.000000" height="31.000000" stroke="#707070"
 						stroke-opacity="0" stroke-width="1.000000" />
 				</g>
 
 				<g style="mix-blend-mode:normal">
-					<line id="直线 31" x1="1024.500000" y1="112.464844" x2="1018.500000" y2="118.464844" stroke="#00E62C"
-						stroke-opacity="1.000000" stroke-width="1.000000" />
+					<line id="直线 31" x1="1024.500000" y1="112.464844" x2="1018.500000" y2="118.464844"
+						:stroke="key2 ? '#00E62C' : ' #FF0000'" stroke-opacity="1.000000" stroke-width="1.000000" />
 				</g>
 				<g style="mix-blend-mode:normal">
-					<line id="直线 32" x1="1030.500000" y1="118.464844" x2="1024.500000" y2="112.464844" stroke="#00E62C"
-						stroke-opacity="1.000000" stroke-width="1.000000" />
+					<line id="直线 32" x1="1030.500000" y1="118.464844" x2="1024.500000" y2="112.464844"
+						:stroke="key2 ? '#00E62C' : ' #FF0000'" stroke-opacity="1.000000" stroke-width="1.000000" />
 				</g>
 				<g style="mix-blend-mode:normal">
-					<line id="直线 31" x1="1024.500000" y1="115.464844" x2="1018.500000" y2="121.464844" stroke="#00E62C"
-						stroke-opacity="1.000000" stroke-width="1.000000" />
+					<line id="直线 31" x1="1024.500000" y1="115.464844" x2="1018.500000" y2="121.464844"
+						:stroke="key2 ? '#00E62C' : ' #FF0000'" stroke-opacity="1.000000" stroke-width="1.000000" />
 				</g>
 				<g style="mix-blend-mode:normal">
-					<line id="直线 32" x1="1030.500000" y1="121.464844" x2="1024.500000" y2="115.464844" stroke="#00E62C"
-						stroke-opacity="1.000000" stroke-width="1.000000" />
+					<line id="直线 32" x1="1030.500000" y1="121.464844" x2="1024.500000" y2="115.464844"
+						:stroke="key2 ? '#00E62C' : ' #FF0000'" stroke-opacity="1.000000" stroke-width="1.000000" />
 				</g>
 				<g style="mix-blend-mode:normal">
-					<line id="直线 31" x1="1024.500000" y1="179.933594" x2="1018.500000" y2="173.933594" stroke="#00E62C"
-						stroke-opacity="1.000000" stroke-width="1.000000" />
+					<line id="直线 31" x1="1024.500000" y1="179.933594" x2="1018.500000" y2="173.933594"
+						:stroke="key2 ? '#00E62C' : ' #FF0000'" stroke-opacity="1.000000" stroke-width="1.000000" />
 				</g>
 				<g style="mix-blend-mode:normal">
-					<line id="直线 32" x1="1030.500000" y1="173.933594" x2="1024.500000" y2="179.933594" stroke="#00E62C"
-						stroke-opacity="1.000000" stroke-width="1.000000" />
+					<line id="直线 32" x1="1030.500000" y1="173.933594" x2="1024.500000" y2="179.933594"
+						:stroke="key2 ? '#00E62C' : ' #FF0000'" stroke-opacity="1.000000" stroke-width="1.000000" />
 				</g>
 				<g style="mix-blend-mode:normal">
-					<line id="直线 31" x1="1024.500000" y1="176.933594" x2="1018.500000" y2="170.933594" stroke="#00E62C"
-						stroke-opacity="1.000000" stroke-width="1.000000" />
+					<line id="直线 31" x1="1024.500000" y1="176.933594" x2="1018.500000" y2="170.933594"
+						:stroke="key2 ? '#00E62C' : ' #FF0000'" stroke-opacity="1.000000" stroke-width="1.000000" />
 				</g>
 				<g style="mix-blend-mode:normal">
-					<line id="直线 32" x1="1030.500000" y1="170.933594" x2="1024.500000" y2="176.933594" stroke="#00E62C"
-						stroke-opacity="1.000000" stroke-width="1.000000" />
+					<line id="直线 32" x1="1030.500000" y1="170.933594" x2="1024.500000" y2="176.933594"
+						:stroke="key2 ? '#00E62C' : ' #FF0000'" stroke-opacity="1.000000" stroke-width="1.000000" />
 				</g>
 				<g style="mix-blend-mode:normal">
 					<line id="直线 17" x1="1273.000000" y1="613.000000" x2="1273.000000" y2="605.000000" stroke="#FF0000"
@@ -1317,7 +1317,7 @@ const sockey = ref([true, true, true, false])
 <style scoped lang="scss">
 .box {
 	background-color: black;
-	height: calc(100vh - 50px);
+	height: 1000px;
 	margin: auto;
 	overflow: hidden;
 
