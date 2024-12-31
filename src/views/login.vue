@@ -6,20 +6,13 @@
             <span class="self-center text">系统</span>
             <div class="flex-col self-stretch mt-55">
                 <div class="flex-row items-center group">
-                    <el-input v-model="form.username" style="width: 240px" placeholder="请输入账号" />
+                    <el-input v-model="form.username" style="width: 100%" placeholder="请输入账号" />
                 </div>
                 <div class="flex-row items-center group view">
-                    <el-input v-model="form.password" style="width: 240px" placeholder="请输入密码" show-password />
+                    <el-input v-model="form.password" style="width: 100%" placeholder="请输入密码" show-password />
 
                 </div>
-                <div class="flex-row group_2">
-                    <div class="flex-row items-center flex-1 group_3">
-                        <el-input v-model="form.code" style="width: 240px" placeholder="验证码" />
-
-                    </div>
-                    <div class="shrink-0 group_4 ml-15"></div>
-                </div>
-                <el-button type="success" @click="userlogin">登录</el-button>
+                <el-button type="success" @click="userlogin" style="margin-top: 40px;">登录</el-button>
             </div>
         </div>
         <span class="text_6 pos_3"></span>
@@ -28,16 +21,23 @@
 <script setup>
 import { ref } from 'vue'
 import { postLogin } from '@/api/user'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 const form = ref({
     username: '',
     password: '',
     // 验证码
-    code: ''
 })
 const userlogin = () => {
     console.log('登录')
     postLogin(form.value).then(res => {
         console.log(res)
+        if (res.code == 200) {
+            localStorage.setItem('token', res.data.token)
+            router.push('/home')
+        } else {
+            console.log('登录失败')
+        }
     })
 }
 </script>
@@ -108,14 +108,7 @@ const userlogin = () => {
     line-height: 1.51rem;
 }
 
-.group {
-    padding: 0.38rem 0.88rem 0.63rem;
-    border-radius: 0.25rem;
-    border-left: solid 0.063rem #d9d9d9;
-    border-right: solid 0.063rem #d9d9d9;
-    border-top: solid 0.063rem #d9d9d9;
-    border-bottom: solid 0.063rem #d9d9d9;
-}
+.group {}
 
 .image_2 {
     width: 1rem;

@@ -35,7 +35,7 @@
                         <template #reference>
                             <el-avatar :size="30"> user </el-avatar>
                         </template>
-                        <el-button style="width: 100%;" @click="router.push('/login')">退出登录</el-button>
+                        <el-button style="width: 100%;" @click="logout">退出登录</el-button>
                     </el-popover>
                 </div>
                 <!-- 路由出口 -->
@@ -52,23 +52,20 @@ import { useRouter } from 'vue-router'
 import { tabs, menu } from '../tab'
 import autofit from "autofit.js";
 const router = useRouter()
+console.log(router);
+
 const isCollapse = ref(false)
+
+//退出登录
+const logout = () => {
+    router.push('/login')
+    localStorage.removeItem('token')
+}
+
+// 监听路由变化
 const handleSelect = (key, keyPath) => {
     router.push(tabs[key])
 }
-const a = []
-a.length
-// onMounted(() => {
-//   autofit.init(
-//     {
-//       dh: 1180,
-//       dw: 1920,
-//       el: "#app",
-//       resize: true,
-//     },
-//     false
-//   );
-// });
 </script>
 <style scoped lang='scss'>
 .common-layout {
