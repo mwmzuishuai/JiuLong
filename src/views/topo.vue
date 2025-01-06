@@ -26,14 +26,14 @@ const getEms = (n) => {
     emsList1.map(item => {
         return getEmsdetail(item.StationNumber, item.Id).then(res => {
             res.data.find(i => i.title == '电池SOC').value
-            mxObj1.value.socList.push(res.data.find(i => i.title == '电池SOC').value)
+            mxObj1.value.socList.push(res.data.find(i => i.title == '电池SOC').value / 1000)
             mxObj1.value.bms.push(res.data.find(i => i.title == 'BMS通讯状态').value)
         })
     })
     emsList2.map(item => {
         return getEmsdetail(item.StationNumber, item.Id).then(res => {
             res.data.find(i => i.title == '电池SOC').value
-            mxObj2.value.socList.push(res.data.find(i => i.title == '电池SOC').value)
+            mxObj2.value.socList.push(res.data.find(i => i.title == '电池SOC').value / 1000)
             mxObj2.value.bms.push(res.data.find(i => i.title == 'BMS通讯状态').value)
         })
     })
@@ -50,14 +50,14 @@ const getEms = (n) => {
         const listmap = emsList1.map(item => {
             return getEmsdetail(item.StationNumber, item.Id).then(res => {
                 res.data.find(i => i.title == '电池SOC').value
-                obj1.socList.push(res.data.find(i => i.title == '电池SOC').value)
+                obj1.socList.push(res.data.find(i => i.title == '电池SOC').value / 1000)
                 obj1.bms.push(res.data.find(i => i.title == 'BMS通讯状态').value)
             })
         })
         const listmap2 = emsList1.map(item => {
             return getEmsdetail(item.StationNumber, item.Id).then(res => {
                 res.data.find(i => i.title == '电池SOC').value
-                obj2.socList.push(res.data.find(i => i.title == '电池SOC').value)
+                obj2.socList.push(res.data.find(i => i.title == '电池SOC').value / 1000)
                 obj2.bms.push(res.data.find(i => i.title == 'BMS通讯状态').value)
             })
         })

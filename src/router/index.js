@@ -8,9 +8,9 @@ const router = createRouter({
         }, {
             path: '/com', component: () => import('../components/conment.vue')
         },
-            // {
-            // path: '/com2', component: () => import('../components/conment.vue')
-            // }
+        {
+            path: '/rs', component: () => import('../views/remoteSignal.vue')
+        }
         ]
     },
     {

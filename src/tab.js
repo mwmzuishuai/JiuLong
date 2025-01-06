@@ -1,6 +1,7 @@
 const tabs = {
     '1': '/',
     '2': '/com',
+    '3': '/rs'
 
 }
 const menu = [
@@ -14,6 +15,10 @@ const menu = [
         index: '2',
         icon: 'TrendCharts',
     },
-
+    {
+        name: '二次仓',
+        index: '3',
+        icon: 'Monitor',
+    }
 ]
 export { menu, tabs }
