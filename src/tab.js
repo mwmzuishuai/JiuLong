@@ -1,8 +1,8 @@
 const tabs = {
     '1': '/',
     '2': '/com',
-    '3': '/rs'
-
+    '3': '/rs',
+    '4': '/ammeter',
 }
 const menu = [
     {
@@ -19,6 +19,11 @@ const menu = [
         name: '二次仓',
         index: '3',
         icon: 'Monitor',
+    },
+    {
+        name: '电表数据',
+        index: '4',
+        icon: 'PieChart',
     }
 ]
 export { menu, tabs }

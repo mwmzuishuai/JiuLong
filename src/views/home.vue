@@ -2,7 +2,8 @@
     <div class="common-layout">
         <el-container style="height: 100%;">
             <!-- 左侧导航栏 -->
-            <el-aside style="background-color: #fff;position: relative;width: auto;overflow:visible;">
+            <el-aside
+                style="background-color: #fff;position: relative;width: auto;overflow:visible;border-right: 1px solid #dfe4ea;">
                 <div>
                     <img src="../assets/LOGO.svg" alt="" style="width: auto;"></img>
                 </div>
@@ -85,6 +86,7 @@ const handleSelect = (key, keyPath) => {
 
 .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: 200px;
+    border: none;
 }
 
 :deep(.el-main) {

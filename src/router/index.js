@@ -10,7 +10,10 @@ const router = createRouter({
         },
         {
             path: '/rs', component: () => import('../views/remoteSignal.vue')
-        }
+        },
+        {
+            path: '/ammeter', component: () => import('../views/ammeter/ammeter.vue')
+        },
         ]
     },
     {

@@ -6,4 +6,9 @@ const getEmsdetail = (stationNumber, id) => {
         method: "get",
     });
 }
-export { getEmsdetail }
+const getAmmeter = (id) => {
+    return request({
+        url: `/Meter/MeterData?id=${id}`,
+    })
+}
+export { getEmsdetail, getAmmeter }
