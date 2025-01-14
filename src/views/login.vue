@@ -3,7 +3,7 @@
         <div class="section"></div>
         <img class="image pos" src="../assets/LOGO.svg" />
         <div class="flex-col section_2 pos_2">
-            <span class="self-center text">系统</span>
+            <span class="self-center text">玖龙后台监控系统</span>
             <div class="flex-col self-stretch mt-55">
                 <div class="flex-row items-center group">
                     <el-input v-model="form.username" style="width: 100%" placeholder="请输入账号" />
@@ -22,6 +22,7 @@
 import { ref } from 'vue'
 import { postLogin } from '@/api/user'
 import { useRouter } from 'vue-router'
+import { ElMessage } from 'element-plus'
 const router = useRouter()
 const form = ref({
     username: '',
@@ -30,15 +31,25 @@ const form = ref({
 })
 const userlogin = () => {
     console.log('登录')
-    postLogin(form.value).then(res => {
-        console.log(res)
-        if (res.code == 200) {
-            localStorage.setItem('token', res.data.token)
-            router.push('/home')
-        } else {
-            console.log('登录失败')
-        }
-    })
+    if (!form.value.username || !form.value.password) {
+        ElMessage.error('请输入账号密码')
+        return
+    }
+    if (form.value.username == 'admin' && form.value.password == 'admin') {
+        router.push('/')
+        localStorage.setItem('token', 'admin')
+    } else {
+        ElMessage.error('账号密码错误')
+    }
+    // postLogin(form.value).then(res => {
+    //     console.log(res)
+    //     if (res.code == 200) {
+    //         localStorage.setItem('token', res.data.token)
+    //         router.push('/home')
+    //     } else {
+    //         console.log('登录失败')
+    //     }
+    // })
 }
 </script>
 <style scoped lang='scss'>

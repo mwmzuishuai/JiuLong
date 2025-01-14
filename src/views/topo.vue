@@ -5,7 +5,7 @@
     </div>
 </template>
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import onetitle from '../components/onetitle.vue';
 import { emsList1, emsList2 } from '../js/ems.js'
 import { getEmsdetail } from '../api/Inquire'
@@ -71,6 +71,9 @@ const getEms = (n) => {
 }
 onMounted(() => {
     getEms()
+})
+onUnmounted(() => {
+    clearInterval(item)
 })
 </script>
 <style scoped lang='scss'>

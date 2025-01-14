@@ -11,8 +11,9 @@
     </div>
 </template>
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import Table from '../components/table.vue'
+import { getYC, getYx } from '../api/Inquire'
 const yxTableData = ref([
     {
         "ip": "127.0.0.1",
@@ -1565,5 +1566,25 @@ const ycTableData = ref([
         "value": 19.9
     }
 ])
+var item
+onMounted(() => {
+    getYC().then(res => {
+        ycTableData.value = res.data
+    })
+    getYx().then(res => {
+        yxTableData.value = res.data
+    })
+    item = setInterval(() => {
+        getYC().then(res => {
+            ycTableData.value = res.data
+        })
+        getYx().then(res => {
+            yxTableData.value = res.data
+        })
+    }, 3000)
+})
+onUnmounted(() => {
+    clearInterval(item)
+})
 </script>
 <style scoped lang='scss'></style>

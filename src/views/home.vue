@@ -51,7 +51,6 @@
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { tabs, menu } from '../tab'
-import autofit from "autofit.js";
 const router = useRouter()
 console.log(router);
 
@@ -67,6 +66,10 @@ const logout = () => {
 const handleSelect = (key, keyPath) => {
     router.push(tabs[key])
 }
+
+onMounted(() => {
+    localStorage.getItem('token') || router.push('/login')
+})
 </script>
 <style scoped lang='scss'>
 .common-layout {

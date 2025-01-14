@@ -1,38 +1,69 @@
 <template>
     <div class="msweep">
-        <el-tabs v-model="activeName" type="card" class="demo-tabs" @tab-change="handleClick">
+        <el-tabs v-model="activeName" type="border-card" class="demo-tabs" @tab-change="handleClick"
+            style="height: 100%;">
             <el-tab-pane label="I段" name="1">
                 <div class="header">10KV I 段母线设备监控</div>
+                <div class="bigscreen">
+                    <div class="comesBox" v-for="i in detailList">
+                        <img src="../assets/png.png" alt="" style="width: 200px;">
+                        <!-- <div>{{ '储能柜1B1' }}</div> -->
+                        <div class="flex-col justify-start items-start section">
+                            <div class="smweep">
+                                <div class="font" v-for="item in emsForm">
+                                    <span>
+                                        {{ item.title }}:
+                                    </span>
+                                    <span v-if="item.status">
+                                        {{ i.find(n => n.title === item.title) ? i.find(n => n.title ===
+                                            item.title).value ?
+                                            '正常' : '断开' : '' }}
+                                    </span>
+                                    <span v-else>
+                                        {{ i.find(n => n.title === item.title) ? i.find(n => n.title ===
+                                            item.title).value : ''
+                                        }}
+                                        {{ item.unit }}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </el-tab-pane>
             <el-tab-pane label="II段" name="2">
                 <div class="header">10KV II 段母线设备监控</div>
-            </el-tab-pane>
-        </el-tabs>
-        <div class="bigscreen">
-            <div class="comesBox" v-for="i in detailList">
-                <img src="../assets/png.png" alt="" style="width: 200px;">
-                <!-- <div>{{ '储能柜1B1' }}</div> -->
-                <div class="flex-col justify-start items-start section">
-                    <div class="smweep">
-                        <div class="font" v-for="item in emsForm">
-                            <span>
-                                {{ item.title }}:
-                            </span>
-                            <span v-if="item.status">
-                                {{ i.find(n => n.title === item.title) ? i.find(n => n.title === item.title).value ?
-                                    '正常' : '断开' : '' }}
-                            </span>
-                            <span v-else>
-                                {{ i.find(n => n.title === item.title) ? i.find(n => n.title === item.title).value : ''
-                                }}
-                                {{ item.unit }}
-                            </span>
+                <div class="bigscreen">
+                    <div class="comesBox" v-for="i in detailList">
+                        <img src="../assets/png.png" alt="" style="width: 200px;">
+                        <!-- <div>{{ '储能柜1B1' }}</div> -->
+                        <div class="flex-col justify-start items-start section">
+                            <div class="smweep">
+                                <div class="font" v-for="item in emsForm">
+                                    <span>
+                                        {{ item.title }}:
+                                    </span>
+                                    <span v-if="item.status">
+                                        {{ i.find(n => n.title === item.title) ? i.find(n => n.title ===
+                                            item.title).value ?
+                                            '正常' : '断开' : '' }}
+                                    </span>
+                                    <span v-else>
+                                        {{ i.find(n => n.title === item.title) ? i.find(n => n.title ===
+                                            item.title).value : ''
+                                        }}
+                                        {{ item.unit }}
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-        </div>
+                </div>
+            </el-tab-pane>
+        </el-tabs>
+
     </div>
 
 </template>
@@ -136,11 +167,11 @@ onUnmounted(() => {
 <style scoped lang='scss'>
 .msweep {
     background-color: #fff;
-    height: calc(100vh - 80px);
+    height: 100%;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    padding: 10px;
+
     // justify-content: center;
 }
 

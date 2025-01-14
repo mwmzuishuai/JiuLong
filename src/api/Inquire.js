@@ -11,4 +11,14 @@ const getAmmeter = (id) => {
         url: `/Meter/MeterData?id=${id}`,
     })
 }
-export { getEmsdetail, getAmmeter }
+const getYC = () => {
+    return request({
+        url: `/Iec104/Iec104YaoCe`,
+    })
+}
+const getYx = () => {
+    return request({
+        url: `Iec104/Iec104YaoXin`,
+    })
+}
+export { getEmsdetail, getAmmeter, getYC, getYx }
