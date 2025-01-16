@@ -1,11 +1,12 @@
 <template>
 	<div class="box">
 		<div class="box_button">
-			<el-button type="success" class="button" @click="upKey(1)">开关1</el-button><br>
-			<el-button type="success" class="button" @click="upKey(2)">开关2</el-button><br>
-			<el-button type="success" class="button" @click="upKey(3)">开关3</el-button><br>
-			<el-button type="success" class="button" @click="upKey(4)">开关4</el-button><br>
-			<el-button type="success" class="button" @click="upKey(5)">开关5</el-button>
+			<el-button :type="key1 ? 'success' : 'danger'" class="button" @click="upKey(1)">开关1</el-button><br>
+			<el-button :type="key2 ? 'success' : 'danger'" class="button" @click="upKey(2)">开关2</el-button><br>
+			<el-button :type="key3 ? 'success' : 'danger'" class="button" @click="upKey(3)">开关3</el-button><br>
+			<el-button :type="key4 ? 'success' : 'danger'" class="button" @click="upKey(4)">开关4</el-button><br>
+			<el-button :type="key5 ? 'success' : 'danger'" class="button" @click="upKey(5)">开关5</el-button><br>
+			<el-button :type="key6 ? 'success' : 'danger'" class="button" @click="upKey(6)">开关5</el-button>
 		</div>
 		<svg width="2560.000000" height="1440.000000" viewBox="0 0 2560 1440" fill="none"
 			xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -1270,7 +1271,18 @@
 					fill="#FFFDFD" fill-opacity="1.000000" fill-rule="evenodd" v-else />
 				<line id="直线 64" x1="1027.000000" y1="258.000000" x2="1093.000000" y2="258.000000" stroke="#FF0000"
 					stroke-opacity="1.000000" stroke-width="1.000000" />
-
+				<text x="1050" y="154" font-size="16" fill="#00b894" v-if="key1">开关1已开启</text>
+				<text x="1050" y="154" font-size="16" fill="red" v-else>开关1已断开</text>
+				<text x="920" y="184" font-size="16" fill="#00b894" v-if="key2">开关2已开启</text>
+				<text x="920" y="184" font-size="16" fill="red" v-else>开关2已断开</text>
+				<text x="920" y="284" font-size="16" fill="#00b894" v-if="key3">开关3已开启</text>
+				<text x="920" y="284" font-size="16" fill="red" v-else>开关3已断开</text>
+				<text x="1280" y="344" font-size="16" fill="#00b894" v-if="key4">开关4已开启</text>
+				<text x="1280" y="344" font-size="16" fill="red" v-else>开关4已断开</text>
+				<text x="1280" y="394" font-size="16" fill="#00b894" v-if="key5">开关5已开启</text>
+				<text x="1280" y="394" font-size="16" fill="red" v-else>开关5已断开</text>
+				<text x="1270" y="548" font-size="16" fill="#00b894" v-if="key6">开关6已开启</text>
+				<text x="1270" y="548" font-size="16" fill="red" v-else>开关6已断开</text>
 			</g>
 
 		</svg>
@@ -1290,7 +1302,7 @@ const props = defineProps({
 	},
 	key1: {
 		type: Boolean,
-		default: true,
+		default: false,
 	},
 	key2: {
 		type: Boolean,
@@ -1298,7 +1310,7 @@ const props = defineProps({
 	},
 	key3: {
 		type: Boolean,
-		default: true,
+		default: false,
 	},
 	key4: {
 		type: Boolean,
@@ -1306,11 +1318,11 @@ const props = defineProps({
 	},
 	key5: {
 		type: Boolean,
-		default: true,
+		default: false,
 	},
 	key6: {
 		type: Boolean,
-		default: true,
+		default: false,
 	},
 	soc: {
 		type: Array,
