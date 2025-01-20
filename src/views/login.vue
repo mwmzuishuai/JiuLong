@@ -119,7 +119,6 @@ const userlogin = () => {
     line-height: 1.51rem;
 }
 
-.group {}
 
 .image_2 {
     width: 1rem;

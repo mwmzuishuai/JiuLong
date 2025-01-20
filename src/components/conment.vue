@@ -95,7 +95,6 @@ const emsForm = ref([
     { title: '总放电量', status: false, unit: 'kWh' },
     { title: 'PCS输出总有功功率', status: false, unit: 'kW' },
     { title: 'PCS工作状态', status: true, unit: '' },
-    { title: '电池SOC', status: false, unit: '%' },
     { title: '电池最高单体电压', status: false, unit: 'V' },
     { title: '电池最低单体电压', status: false, unit: 'V' },
     { title: '电池最高单体温度', status: false, unit: '℃' },

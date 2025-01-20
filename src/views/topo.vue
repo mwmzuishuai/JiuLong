@@ -49,15 +49,15 @@ const getEms = (n) => {
         }
         const listmap = emsList1.map(item => {
             return getEmsdetail(item.StationNumber, item.Id).then(res => {
-                res.data.find(i => i.title == '电池SOC').value
-                obj1.socList.push(res.data.find(i => i.title == '电池SOC').value / 1000)
+                res.data.find(i => i.title == '簇SOC').value
+                obj1.socList.push(res.data.find(i => i.title == '簇SOC').value / 100)
                 obj1.bms.push(res.data.find(i => i.title == 'BMS通讯状态').value)
             })
         })
         const listmap2 = emsList1.map(item => {
             return getEmsdetail(item.StationNumber, item.Id).then(res => {
-                res.data.find(i => i.title == '电池SOC').value
-                obj2.socList.push(res.data.find(i => i.title == '电池SOC').value / 1000)
+                res.data.find(i => i.title == '簇SOC').value
+                obj2.socList.push(res.data.find(i => i.title == '簇SOC').value / 100)
                 obj2.bms.push(res.data.find(i => i.title == 'BMS通讯状态').value)
             })
         })

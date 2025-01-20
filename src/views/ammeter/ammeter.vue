@@ -19,7 +19,7 @@
             </div>
             <div id="print2" class="conmentsd">
                 <el-descriptions title="结算电表2" border :column="2">
-                    <el-descriptions-item :label="item.title" v-for="item in table">{{ ammeterTd(item.title, 1)
+                    <el-descriptions-item :label="item.title" v-for="item in table">{{ ammeterTd(item.title, 2)
                         }}{{ item.value }}</el-descriptions-item>
                 </el-descriptions>
             </div>
@@ -28,7 +28,7 @@
 </template>
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import { getAmmeter } from '../../api/Inquire'
+import { getAmmeter, getDataLine } from '../../api/Inquire'
 const scrolls = ref(null)
 const table = ref([
     { title: '正向有功总电能', value: 'kWh', },
