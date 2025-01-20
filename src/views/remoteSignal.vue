@@ -2,10 +2,10 @@
     <div style="height: 100%;">
         <el-tabs type="border-card" style="height: 100%;">
             <el-tab-pane label="遥信">
-                <Table :type="'yx'" :table-data="yxTableData" />
+                <Table :type="'yx'" :title="'遥信'" :table-data="yxTableData" />
             </el-tab-pane>
             <el-tab-pane label="遥测">
-                <Table :type="'yc'" :table-data="ycTableData" />
+                <Table :type="'yc'" :title="'遥测'" :table-data="ycTableData" />
             </el-tab-pane>
         </el-tabs>
     </div>
@@ -1581,7 +1581,7 @@ onMounted(() => {
         getYx().then(res => {
             yxTableData.value = res.data
         })
-    }, 3000)
+    }, import.meta.env.VITE_TIMING)
 })
 onUnmounted(() => {
     clearInterval(item)

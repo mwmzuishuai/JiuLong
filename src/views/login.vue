@@ -3,7 +3,7 @@
         <div class="section"></div>
         <img class="image pos" src="../assets/LOGO.svg" />
         <div class="flex-col section_2 pos_2">
-            <span class="self-center text">玖龙后台监控系统</span>
+            <span class="self-center text">玖隆后台监控系统</span>
             <div class="flex-col self-stretch mt-55">
                 <div class="flex-row items-center group">
                     <el-input v-model="form.username" style="width: 100%" placeholder="请输入账号" />

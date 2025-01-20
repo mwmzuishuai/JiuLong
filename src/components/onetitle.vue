@@ -1,6 +1,6 @@
 <template>
 	<div class="box">
-		<div class="box_button">
+		<div class="box_button" v-if="false">
 			<el-button :type="key1 ? 'success' : 'danger'" class="button" @click="upKey(1)">开关1</el-button><br>
 			<el-button :type="key2 ? 'success' : 'danger'" class="button" @click="upKey(2)">开关2</el-button><br>
 			<el-button :type="key3 ? 'success' : 'danger'" class="button" @click="upKey(3)">开关3</el-button><br>

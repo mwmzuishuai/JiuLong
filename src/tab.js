@@ -3,6 +3,7 @@ const tabs = {
     '2': '/com',
     '3': '/rs',
     '4': '/ammeter',
+    '5': '/data'
 }
 const menu = [
     {
@@ -24,6 +25,10 @@ const menu = [
         name: '电表数据',
         index: '4',
         icon: 'PieChart',
+    }, {
+        name: '数据测控',
+        index: '5',
+        icon: 'DataLine',
     }
 ]
 export { menu, tabs }

@@ -14,6 +14,9 @@ const router = createRouter({
         {
             path: '/ammeter', component: () => import('../views/ammeter/ammeter.vue')
         },
+        {
+            path: '/data', component: () => import('../views/dataLine.vue')
+        }
         ]
     },
     {

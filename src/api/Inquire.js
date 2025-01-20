@@ -21,4 +21,9 @@ const getYx = () => {
         url: `Iec104/Iec104YaoXin`,
     })
 }
-export { getEmsdetail, getAmmeter, getYC, getYx }
+const getDataLine = (n) => {
+    return request({
+        url: `MonitorDevice/MonitorData/${n}`,
+    })
+}
+export { getEmsdetail, getAmmeter, getYC, getYx, getDataLine }

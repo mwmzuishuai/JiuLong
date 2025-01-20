@@ -1,6 +1,6 @@
 <template>
     <div style="height: 80vh;overflow-y: auto;">
-        <el-descriptions :title="type == 'yx' ? '遥信' : '遥感'" border :column="3">
+        <el-descriptions :title="title" border :column="3">
             <el-descriptions-item :label="item.title" :span="1" v-for="item in tableData">
                 <template v-if="type === 'yx'">
                     <el-tag type="success" v-if="item.isFlag">正常</el-tag>
@@ -23,6 +23,10 @@ const { tableData, type } = defineProps({
     type: {
         type: String,
         default: 'yx'
+    },
+    title: {
+        type: String,
+        default: ''
     }
 })
 </script>
